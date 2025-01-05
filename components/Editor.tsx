@@ -2,14 +2,12 @@ import React from "react";
 import MonacoEditor from "@monaco-editor/react";
 
 interface LocalEditorProps {
+  value: string;
 
-    value: string;
-  
-    language: string;
-  
-    onChange: (value: string) => void;
-  
-  }
+  language: string;
+
+  onChange: (value: string) => void;
+}
 
 const Editor: React.FC<LocalEditorProps> = ({ value, language, onChange }) => {
   return (
