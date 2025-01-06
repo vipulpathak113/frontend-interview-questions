@@ -7,7 +7,6 @@ interface ConsoleProps {
 const Console: React.FC<ConsoleProps> = ({ logs }) => {
   return (
     <div className="console">
-      <h3>Console Output</h3>
       <pre>{logs.join("\n")}</pre>
     </div>
   );
