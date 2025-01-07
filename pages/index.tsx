@@ -7,7 +7,9 @@ import Console from "@/components/Console";
 const IndexPage = () => {
   const [mode, setMode] = useState<"html" | "react">("html");
   const [activeTab, setActiveTab] = useState("html");
-  const [activePreviewTab, setActivePreviewTab] = useState<"preview" | "console">("preview");
+  const [activePreviewTab, setActivePreviewTab] = useState<
+    "preview" | "console"
+  >("preview");
 
   const [html, setHtml] = useState("<h1>Hello, World!</h1>");
   const [css, setCss] = useState("body { font-family: Arial; }");
@@ -42,7 +44,9 @@ const IndexPage = () => {
     <div className="container">
       {/* Dropdown */}
       <div className="header">
-        <label htmlFor="mode-select" className="dropdown-label">Select Mode</label>
+        <label htmlFor="mode-select" className="dropdown-label">
+          Select Mode
+        </label>
         <select
           id="mode-select"
           value={mode}
@@ -60,20 +64,35 @@ const IndexPage = () => {
         {mode === "html" ? (
           <div className="editor-container">
             <div className="tabs">
-              <button onClick={() => setActiveTab("html")} className={`tab-button ${activeTab === "html" ? "active" : ""}`}>
+              <button
+                onClick={() => setActiveTab("html")}
+                className={`tab-button ${activeTab === "html" ? "active" : ""}`}
+              >
                 HTML
               </button>
-              <button onClick={() => setActiveTab("css")} className={`tab-button ${activeTab === "css" ? "active" : ""}`}>
+              <button
+                onClick={() => setActiveTab("css")}
+                className={`tab-button ${activeTab === "css" ? "active" : ""}`}
+              >
                 CSS
               </button>
-              <button onClick={() => setActiveTab("js")} className={`tab-button ${activeTab === "js" ? "active" : ""}`}>
+              <button
+                onClick={() => setActiveTab("js")}
+                className={`tab-button ${activeTab === "js" ? "active" : ""}`}
+              >
                 JS
               </button>
             </div>
             <div className="editor">
-              {activeTab === "html" && <Editor value={html} language="html" onChange={setHtml} />}
-              {activeTab === "css" && <Editor value={css} language="css" onChange={setCss} />}
-              {activeTab === "js" && <Editor value={js} language="javascript" onChange={setJs} />}
+              {activeTab === "html" && (
+                <Editor value={html} language="html" onChange={setHtml} />
+              )}
+              {activeTab === "css" && (
+                <Editor value={css} language="css" onChange={setCss} />
+              )}
+              {activeTab === "js" && (
+                <Editor value={js} language="javascript" onChange={setJs} />
+              )}
             </div>
           </div>
         ) : (
@@ -87,13 +106,17 @@ const IndexPage = () => {
           <div className="preview-tabs">
             <button
               onClick={() => handleTabChange("preview")}
-              className={`tab-button ${activePreviewTab === "preview" ? "active" : ""}`}
+              className={`tab-button ${
+                activePreviewTab === "preview" ? "active" : ""
+              }`}
             >
               Preview
             </button>
             <button
               onClick={() => handleTabChange("console")}
-              className={`tab-button ${activePreviewTab === "console" ? "active" : ""}`}
+              className={`tab-button ${
+                activePreviewTab === "console" ? "active" : ""
+              }`}
             >
               Console
             </button>
@@ -102,7 +125,12 @@ const IndexPage = () => {
           <div className="output-content">
             {activePreviewTab === "preview" ? (
               mode === "html" ? (
-                <Preview html={html} css={css} js={js} setConsoleLogs={setHtmlLogs} />
+                <Preview
+                  html={html}
+                  css={css}
+                  js={js}
+                  setConsoleLogs={setHtmlLogs}
+                />
               ) : (
                 <ReactPreview code={jsx} setConsoleLogs={setReactLogs} />
               )
