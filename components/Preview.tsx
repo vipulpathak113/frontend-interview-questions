@@ -55,7 +55,12 @@ const Preview: React.FC<PreviewProps> = ({ html, css, js, setConsoleLogs }) => {
     }
   }, [html, css, js, setConsoleLogs]);
 
-  return <iframe ref={iframeRef} style={{ width: "100%", height: "500px", border: "none" }} />;
+  return (
+    <iframe
+      ref={iframeRef}
+      style={{ width: "100%", height: "500px", border: "none" }}
+    />
+  );
 };
 
 export default Preview;
