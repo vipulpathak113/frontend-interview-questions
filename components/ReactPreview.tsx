@@ -6,7 +6,10 @@ interface ReactPreviewProps {
   setConsoleLogs: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const ReactPreview: React.FC<ReactPreviewProps> = ({ code, setConsoleLogs }) => {
+const ReactPreview: React.FC<ReactPreviewProps> = ({
+  code,
+  setConsoleLogs,
+}) => {
   useEffect(() => {
     const originalLog = console.log;
 
@@ -24,11 +27,21 @@ const ReactPreview: React.FC<ReactPreviewProps> = ({ code, setConsoleLogs }) => 
 
   return (
     <LiveProvider code={code} noInline>
-      <div style={{ border: "1px solid #ccc", borderRadius: "5px", overflow: "hidden" }}>
-        <div style={{ padding: "10px", backgroundColor: "#f5f5f5", color: "#000" }}>
+      <div
+        style={{
+          border: "1px solid #ccc",
+          borderRadius: "5px",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{ padding: "10px", backgroundColor: "#f5f5f5", color: "#000" }}
+        >
           <LivePreview />
         </div>
-        <div style={{ padding: "10px", backgroundColor: "#ffdddd", color: "#d00" }}>
+        <div
+          style={{ padding: "10px", backgroundColor: "#ffdddd", color: "#d00" }}
+        >
           <LiveError />
         </div>
       </div>
