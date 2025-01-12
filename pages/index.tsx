@@ -54,7 +54,7 @@ const IndexPage = () => {
           className="dropdown-select"
         >
           <option value="html">HTML, CSS, JS</option>
-          <option value="react">React(JSX)</option>
+          <option value="react">React (JSX)</option>
         </select>
       </div>
 
