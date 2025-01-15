@@ -8,7 +8,7 @@ interface PreviewProps {
 }
 
 const Preview: React.FC<PreviewProps> = ({ html, css, js, setConsoleLogs }) => {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const iframeRef =useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
     const iframe = iframeRef.current;
