@@ -47,7 +47,7 @@ const Preview: React.FC<PreviewProps> = ({ html, css, js, setConsoleLogs }) => {
         }
       };
 
-      window.addEventListener("message" , handleMessage);
+      window.addEventListener("message", handleMessage);
 
       return () => {
         window.removeEventListener("message", handleMessage);
