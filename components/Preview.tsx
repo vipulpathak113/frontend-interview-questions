@@ -24,7 +24,7 @@ const Preview: React.FC<PreviewProps> = ({ html, css, js, setConsoleLogs }) => {
               originalLog.apply(console, args);
             };
           })();
-        `;
+        `
 
         doc.open();
         doc.write(`
