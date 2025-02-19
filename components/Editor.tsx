@@ -18,7 +18,7 @@ const Editor: React.FC<LocalEditorProps> = ({ value, language, onChange }) => {
       onChange={(value) => onChange(value || "")}
       theme="vs-dark"
     />
-  );
+  )
 };
 
 export default Editor;
