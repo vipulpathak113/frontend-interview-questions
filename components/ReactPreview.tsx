@@ -11,7 +11,7 @@ const ReactPreview: React.FC<ReactPreviewProps> = ({
   setConsoleLogs,
 }) => {
   useEffect(() => {
-    const originalLog = console.log;
+    const originalLog = console.log
 
     // Intercept console.log
     console.log = (...args: any[]) => {
