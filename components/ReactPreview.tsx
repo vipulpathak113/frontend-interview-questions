@@ -49,4 +49,4 @@ const ReactPreview: React.FC<ReactPreviewProps> = ({
   );
 };
 
-export default ReactPreview;
+export default ReactPreview
