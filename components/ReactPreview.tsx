@@ -23,7 +23,7 @@ const ReactPreview: React.FC<ReactPreviewProps> = ({
       // Restore original console.log on cleanup
       console.log = originalLog;
     };
-  }, [setConsoleLogs]);
+  }, [setConsoleLogs])
 
   return (
     <LiveProvider code={code} noInline>
